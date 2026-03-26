@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <template>
+      <div class="md:w-[150px] w-[100px] flex-shrink-0 group">
+        <div class="md:size-[150px] size-[100px] overflow-hidden">
+          <img
+            data-bind="img"
+            class="h-full w-full group-hover:scale-110 group-active:scale-110 transition-transform duration-300 object-fill"
+            alt=""
+          />
+        </div>
+        <p
+          data-bind="text"
+          class="text-center font-normal font-jost md:text-3xl text-xl mt-2 group-hover:text-blue-800 group-active:text-blue-800 transition-colors duration-300"
+        ></p>
+      </div>
+    </template>
+  </body>
+</html>

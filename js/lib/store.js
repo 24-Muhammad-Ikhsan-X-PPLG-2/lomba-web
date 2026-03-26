@@ -1,0 +1,1 @@
+const GlobalStore = new Proxy();

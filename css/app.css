@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.font-jost {
+  font-family: "Jost", "Inter", sans-serif;
+}
+
+.bg-polygon {
+  clip-path: polygon(
+    /* Jalur Atas */ 60% 0%,
+    55% 10%,
+    75% 15%,
+    /* Jalur Kanan & Penutup Bawah */ 100% 75%,
+    70% 100%,
+    /* Jalur Kiri & Penutup Atas */ 20% 90%,
+    0% 15%,
+    /* Sambungan Akhir ke Titik Awal */ 20% 0%
+  );
+}
