@@ -1,7 +1,7 @@
 import { callComponent } from "../lib/component.js";
 import { useState } from "../lib/state.js";
 
-export default function main() {
+export default async function main() {
   callComponent("Landing/hero", document.getElementById("hero"), (el) => {
     const bg1 = el.querySelector("#bg1");
     const bg2 = el.querySelector("#bg2");
@@ -103,37 +103,93 @@ export default function main() {
       const parser = new DOMParser();
       const doc = parser.parseFromString(htmlRes, "text/html");
       const partnershipCard = doc.querySelector("template");
-      const partnershipWrapper = el.querySelector("#partnership-wrapper");
+      const partnershipWrapper1 = el.querySelector("#partnership-wrapper1");
+      const partnershipWrapper2 = el.querySelector("#partnership-wrapper2");
       partnership.forEach((item) => {
         const card = partnershipCard.content.cloneNode(true);
         const imgCard = card.querySelector("[data-bind=img]");
         imgCard.src = `/assets/img/company/${item.imgSrc}`;
         imgCard.alt = item.title;
         card.querySelector("[data-bind=text]").textContent = item.title;
-        partnershipWrapper.appendChild(card);
+        partnershipWrapper1.appendChild(card);
       });
-
-      const partnershipPrev = el.querySelector("#partnership-prev");
-      const partnershipNext = el.querySelector("#partnership-next");
-
-      partnershipPrev.addEventListener("click", () => {
-        partnershipWrapper.scroll({
-          left: partnershipWrapper.scrollLeft - 200,
-          behavior: "smooth",
-        });
-      });
-
-      partnershipNext.addEventListener("click", () => {
-        partnershipWrapper.scroll({
-          left: partnershipWrapper.scrollLeft + 200,
-          behavior: "smooth",
-        });
+      partnership.forEach((item) => {
+        const card = partnershipCard.content.cloneNode(true);
+        const imgCard = card.querySelector("[data-bind=img]");
+        imgCard.src = `/assets/img/company/${item.imgSrc}`;
+        imgCard.alt = item.title;
+        card.querySelector("[data-bind=text]").textContent = item.title;
+        partnershipWrapper2.appendChild(card);
       });
     },
   );
   callComponent(
     "Landing/menerima-siswa",
     document.getElementById("menerima-siswa-app"),
+  );
+  callComponent(
+    "Landing/jurusan",
+    document.getElementById("jurusan-app"),
+    async (el) => {
+      const wrapperJurusan = el.querySelector("#wrapper-jurusan");
+      const jurusan = [
+        {
+          imgSrc: "tjkt.jpg",
+          title: "TJKT",
+          desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        },
+        {
+          imgSrc: "rpl.jpeg",
+          title: "RPL",
+          desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        },
+        {
+          imgSrc: "dkv.png",
+          title: "DKV",
+          desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        },
+        {
+          imgSrc: "akl.jpeg",
+          title: "AKL",
+          desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        },
+        {
+          imgSrc: "mplb.jpeg",
+          title: "MPLB",
+          desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        },
+      ];
+      const res = await fetch("../../components/Landing/jurusan-card.html");
+      const htmlRes = await res.text();
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(htmlRes, "text/html");
+      const template = doc.querySelector("template");
+      if (template) {
+        jurusan.forEach((item) => {
+          const card = template.content.cloneNode(true);
+          const imgCard = card.querySelector("[data-bind=img]");
+          const judulCard = card.querySelector("[data-bind=judul]");
+          const descCard = card.querySelector("[data-bind=desc");
+          imgCard.src = `/assets/img/jurusan/${item.imgSrc}`;
+          imgCard.alt = item.title;
+          judulCard.textContent = item.title;
+          descCard.textContent = item.desc;
+          wrapperJurusan.appendChild(card);
+        });
+        el.querySelector("#jurusan-prev").addEventListener("click", () => {
+          wrapperJurusan.scroll({
+            left: wrapperJurusan.scrollLeft - 300,
+            behavior: "smooth",
+          });
+        });
+        el.querySelector("#jurusan-next").addEventListener("click", () => {
+          wrapperJurusan.scroll({
+            left: wrapperJurusan.scrollLeft + 300,
+            behavior: "smooth",
+          });
+        });
+      }
+    },
   );
 }
 

@@ -1,37 +1,53 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SMK Letris Indonesia 2</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./css/app.css" />
-  </head>
-  <body>
-    <div id="partnership-card"></div>
-    <div id="navbar"></div>
-    <div id="hero"></div>
-    <div id="about"></div>
-    <div id="menerima-siswa-app"></div>
-    <div id="partnership-app"></div>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="-mb-1"
-      viewBox="0 0 1440 320"
-    >
-      <path
-        fill="#091336"
-        fill-opacity="1"
-        d="M0,96L34.3,112C68.6,128,137,160,206,170.7C274.3,181,343,171,411,176C480,181,549,203,617,224C685.7,245,754,267,823,256C891.4,245,960,203,1029,181.3C1097.1,160,1166,160,1234,149.3C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"
-      ></path>
-    </svg>
-    <div class="min-h-screen bg-[#091336]"></div>
-    <script type="module" src="js/pages/landing.js"></script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SMK Letris Indonesia 2</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./css/app.css" />
+    </head>
+    <body>
+        <!--<div id="partnership-card"></div>-->
+        <div id="navbar"></div>
+        <div id="hero"></div>
+        <div id="about"></div>
+        <div id="menerima-siswa-app"></div>
+        <div id="jurusan-app"></div>
+        <div
+            class="bg-[#091336] h-40 w-full p-4 flex md:flex-row flex-col md:justify-center justify-between gap-4 md:gap-40 items-center"
+        >
+            <h1
+                class="font-serif text-white lg:text-4xl md:text-3xl text-xl md:w-[70%] w-full"
+            >
+                "Membentuk lulusan yang disiplin, adaptif, dan unggul dalam
+                inovasi global."
+            </h1>
+            <button
+                class="px-6 py-2.5 bg-transparent border border-white text-white hover:bg-white hover:text-black cursor-pointer transition duration-300"
+            >
+                Contact Us
+            </button>
+        </div>
+        <div id="partnership-app"></div>
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="-mb-1"
+            viewBox="0 0 1440 320"
+        >
+            <path
+                fill="#091336"
+                fill-opacity="1"
+                d="M0,96L34.3,112C68.6,128,137,160,206,170.7C274.3,181,343,171,411,176C480,181,549,203,617,224C685.7,245,754,267,823,256C891.4,245,960,203,1029,181.3C1097.1,160,1166,160,1234,149.3C1302.9,139,1371,117,1406,106.7L1440,96L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"
+            ></path>
+        </svg>
+        <div class="min-h-screen bg-[#091336]"></div>
+        <script type="module" src="js/pages/landing.js"></script>
+    </body>
 </html>

@@ -1,21 +1,54 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
 body {
-  font-family: "Inter", sans-serif;
+    font-family: "Inter", sans-serif;
 }
 
 .font-jost {
-  font-family: "Jost", "Inter", sans-serif;
+    font-family: "Jost", "Inter", sans-serif;
+}
+
+.font-serif {
+    font-family: serif;
 }
 
 .bg-polygon {
-  clip-path: polygon(
-    /* Jalur Atas */ 60% 0%,
-    55% 10%,
-    75% 15%,
-    /* Jalur Kanan & Penutup Bawah */ 100% 75%,
-    70% 100%,
-    /* Jalur Kiri & Penutup Atas */ 20% 90%,
-    0% 15%,
-    /* Sambungan Akhir ke Titik Awal */ 20% 0%
-  );
+    clip-path: polygon(
+        /* Jalur Atas */ 60% 0%,
+        55% 10%,
+        75% 15%,
+        /* Jalur Kanan & Penutup Bawah */ 100% 75%,
+        70% 100%,
+        /* Jalur Kiri & Penutup Atas */ 20% 90%,
+        0% 15%,
+        /* Sambungan Akhir ke Titik Awal */ 20% 0%
+    );
+}
+.marquee-container {
+    margin-top: 4rem;
+    overflow: hidden;
+    display: flex;
+    gap: 3rem;
+}
+
+.marquee-content {
+    display: flex;
+    flex-shrink: 0;
+    gap: 3rem;
+    min-width: 100%;
+    animation: scroll-marquee 25s linear infinite;
+}
+
+.marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+@keyframes scroll-marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(
+            calc(-100% - 3rem)
+        ); /* -100% panjang konten dikurang gap 3rem */
+    }
 }
