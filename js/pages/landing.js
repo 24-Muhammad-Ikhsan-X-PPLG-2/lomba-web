@@ -1,4 +1,6 @@
-import { callComponent } from "../lib/component.js";
+import { jurusan, jurusanDoodle } from "../data/jurusan.js";
+import partnership from "../data/partnership.js";
+import { callComponent, fetchHtml } from "../lib/component.js";
 import { useState } from "../lib/state.js";
 
 export default async function main() {
@@ -13,7 +15,7 @@ export default async function main() {
       () => {
         bg1.dataset.active = state.bgActive == 1;
         bg2.dataset.active = state.bgActive == 2;
-        console.log(state.bgActive);
+        // console.log(state.bgActive);
       },
     );
 
@@ -64,44 +66,8 @@ export default async function main() {
     "Landing/partnership",
     document.getElementById("partnership-app"),
     async (el) => {
-      const partnership = [
-        {
-          imgSrc: "microsoft.png",
-          title: "Microsoft",
-        },
-        {
-          imgSrc: "adobe.png",
-          title: "Adobe",
-        },
-        {
-          imgSrc: "linux.webp",
-          title: "Linux",
-        },
-        {
-          imgSrc: "google.png",
-          title: "Google",
-        },
-        {
-          imgSrc: "mojang.png",
-          title: "Mojang",
-        },
-        {
-          imgSrc: "apple.png",
-          title: "Apple",
-        },
-        {
-          imgSrc: "ibm.png",
-          title: "IBM",
-        },
-        {
-          imgSrc: "visual_studio_code.png",
-          title: "VSCode",
-        },
-      ];
-      const res = await fetch("/components/Landing/partnership-card.html");
-      const htmlRes = await res.text();
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(htmlRes, "text/html");
+      const doc = await fetchHtml("Landing/partnership-card");
+      if (!doc) return;
       const partnershipCard = doc.querySelector("template");
       const partnershipWrapper1 = el.querySelector("#partnership-wrapper1");
       const partnershipWrapper2 = el.querySelector("#partnership-wrapper2");
@@ -131,64 +97,135 @@ export default async function main() {
     "Landing/jurusan",
     document.getElementById("jurusan-app"),
     async (el) => {
-      const wrapperJurusan = el.querySelector("#wrapper-jurusan");
-      const jurusan = [
-        {
-          imgSrc: "tjkt.jpg",
-          title: "TJKT",
-          desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        },
-        {
-          imgSrc: "rpl.jpeg",
-          title: "RPL",
-          desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        },
-        {
-          imgSrc: "dkv.png",
-          title: "DKV",
-          desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        },
-        {
-          imgSrc: "akl.jpeg",
-          title: "AKL",
-          desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        },
-        {
-          imgSrc: "mplb.jpeg",
-          title: "MPLB",
-          desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        },
-      ];
-      const res = await fetch("../../components/Landing/jurusan-card.html");
-      const htmlRes = await res.text();
-      const parser = new DOMParser();
-      const doc = parser.parseFromString(htmlRes, "text/html");
-      const template = doc.querySelector("template");
-      if (template) {
+      const sliderContainer = el.querySelector("#slider-container");
+      let currentIndex = 0;
+      let otomatisSlide = true;
+
+      function renderCards() {
+        sliderContainer.innerHTML = "";
         jurusan.forEach((item) => {
-          const card = template.content.cloneNode(true);
-          const imgCard = card.querySelector("[data-bind=img]");
-          const judulCard = card.querySelector("[data-bind=judul]");
-          const descCard = card.querySelector("[data-bind=desc");
-          imgCard.src = `/assets/img/jurusan/${item.imgSrc}`;
-          imgCard.alt = item.title;
-          judulCard.textContent = item.title;
-          descCard.textContent = item.desc;
-          wrapperJurusan.appendChild(card);
+          const card = document.createElement("div");
+          card.className = `card-transition absolute md:w-[400px] w-[300px] bg-white/40 border border-white/20 backdrop-blur-xl rounded-xl h-[500px] shadow-lg group overflow-hidden`;
+          card.innerHTML = `
+            <div class="w-full overflow-hidden relative">
+                          <div class="bg-black/50 w-full h-full absolute z-10 opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                          <img src="/assets/img/jurusan/${item.imgSrc}" class="w-full h-[200px] object-cover object-center group-hover:scale-125 group-hover:-rotate-6 transition-transform duration-500" />
+                      </div>
+                      <div class="p-6">
+                          <h1 class="text-black font-bold text-2xl group-hover:text-blue-800 transition-colors">${item.title}</h1>
+                          <p class="mt-2 font-normal text-gray-700 leading-relaxed">${item.desc}</p>
+                      </div>
+          `;
+          sliderContainer.appendChild(card);
         });
-        el.querySelector("#jurusan-prev").addEventListener("click", () => {
-          wrapperJurusan.scroll({
-            left: wrapperJurusan.scrollLeft - 300,
-            behavior: "smooth",
+        updateSlider();
+      }
+      function updateSlider() {
+        requestAnimationFrame(() => {
+          const cards = el.querySelectorAll(".card-transition");
+          const gambarDoodles = el.querySelectorAll(".jurusan-doodle");
+          gambarDoodles.forEach((gambar, idx) => {
+            if (currentIndex === 0) {
+              gambar.classList.add("scale-0");
+              gambar.src = `/assets/img/${jurusanDoodle.tjkt[idx]}`;
+              gambar.classList.remove("scale-0");
+            } else if (currentIndex === 1) {
+              gambar.classList.add("scale-0");
+
+              gambar.src = `/assets/img/${jurusanDoodle.rpl[idx]}`;
+              gambar.classList.remove("scale-0");
+            } else if (currentIndex === 2) {
+              gambar.classList.add("scale-0");
+
+              gambar.src = `/assets/img/${jurusanDoodle.dkv[idx]}`;
+              gambar.classList.remove("scale-0");
+            } else {
+              gambar.src = "";
+              gambar.classList.add("scale-0");
+            }
           });
-        });
-        el.querySelector("#jurusan-next").addEventListener("click", () => {
-          wrapperJurusan.scroll({
-            left: wrapperJurusan.scrollLeft + 300,
-            behavior: "smooth",
+          // console.log(cards);
+          cards.forEach((card, idx) => {
+            card.classList.add(`idx-${idx}`);
+            card.classList.remove(
+              "z-20",
+              "z-10",
+              "z-0",
+              "opacity-100",
+              "opacity-50",
+              "opacity-0",
+              "blur-none",
+              "blur-sm",
+            );
+            if (idx === currentIndex) {
+              // Card Tengah
+              card.style.transform = "translateX(0) scale(1)";
+              card.classList.add("z-20", "opacity-100", "pointer-events-auto");
+              card.classList.remove("pointer-events-none");
+            } else if (
+              idx ===
+              (currentIndex - 1 + jurusan.length) % jurusan.length
+            ) {
+              // Card Kiri
+              card.style.transform = "translateX(-60%) scale(0.85)";
+              card.classList.add("z-10", "opacity-50", "pointer-events-none");
+            } else if (idx === (currentIndex + 1) % jurusan.length) {
+              // Card Kanan
+              card.style.transform = "translateX(60%) scale(0.85)";
+              card.classList.add("z-10", "opacity-50", "pointer-events-none");
+            } else {
+              // Card Lainnya yg di belakang, di hide ke belakang.
+              card.style.transform = "translateX(0) scale(0.5)";
+              card.classList.add("z-0", "opacity-0", "pointer-events-none");
+            }
           });
         });
       }
+      // const card = template.content.cloneNode(true);
+      // const imgCard = card.querySelector("[data-bind=img]");
+      // const judulCard = card.querySelector("[data-bind=judul]");
+      // const descCard = card.querySelector("[data-bind=desc");
+      // imgCard.src = `/assets/img/jurusan/${jurusan[0].imgSrc}`;
+      // imgCard.alt = jurusan[0].title;
+      // judulCard.textContent = jurusan[0].title;
+      // descCard.textContent = jurusan[0].desc;
+      // wrapperJurusan.appendChild(card);
+      const jurusanPrev = el.querySelector("#jurusan-prev");
+      const jurusanNext = el.querySelector("#jurusan-next");
+      jurusanPrev.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % jurusan.length;
+        otomatisSlide = false;
+        updateSlider();
+      });
+      jurusanNext.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + jurusan.length) % jurusan.length;
+        otomatisSlide = false;
+        updateSlider();
+      });
+      jurusanPrev.addEventListener("mouseout", () => {
+        otomatisSlide = true;
+      });
+      jurusanNext.addEventListener("mouseout", () => {
+        otomatisSlide = true;
+      });
+      window.addEventListener("mouseover", (e) => {
+        const card = el.querySelector(`.idx-${currentIndex}`);
+        if (card.contains(e.target)) {
+          console.log(card.querySelector("h1").textContent);
+          otomatisSlide = false;
+        } else {
+          otomatisSlide = true;
+        }
+      });
+      setInterval(() => {
+        if (otomatisSlide) {
+          currentIndex = (currentIndex + 1) % jurusan.length;
+          updateSlider();
+        }
+      }, 10000);
+      requestAnimationFrame(() => {
+        renderCards();
+      });
     },
   );
 }

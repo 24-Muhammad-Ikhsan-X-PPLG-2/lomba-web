@@ -30,3 +30,20 @@ export async function callComponent(nameComponent, div, callback) {
     }
   }
 }
+
+/**
+ *
+ * @param {string} path
+ */
+export async function fetchHtml(path) {
+  try {
+    const res = await fetch(`/components/${path}.html`);
+    const htmlRes = await res.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(htmlRes, "text/html");
+    return doc;
+  } catch (e) {
+    console.error(e);
+    return null;
+  }
+}
