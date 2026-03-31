@@ -1,5 +1,6 @@
 import { jurusan, jurusanDoodle } from "../data/jurusan.js";
 import partnership from "../data/partnership.js";
+import { reasons1, reasons2, reasons3, renderCard } from "../data/reason.js";
 import { callComponent, fetchHtml } from "../lib/component.js";
 import { useState } from "../lib/state.js";
 
@@ -228,8 +229,65 @@ export default async function main() {
       });
     },
   );
+  callComponent("Landing/spmb", document.getElementById("spmb"));
+  callComponent(
+    "Landing/berita",
+    document.getElementById("berita"),
+    async (el) => {
+      const beritaWrapper = el.querySelector("#berita-wrapper");
+      const berita = [
+        {
+          imgSrc: `bahlil-anjg.jpg`,
+          judul: "Kompor harus dimatikan ketika masakan sudah matang.",
+          desc: "Pernyataan pejabat publik di media massa kerap menjadi sorotan warganet belakangan ini. Salah satu di antaranya tidak lain adalah Menteri Energi dan Sumber Daya Mineral (ESDM), Bahlil Lahadalia. Gaya bicaranya yang ceplas-ceplos saat membahas isu krusial sering kali memicu perdebatan.",
+          tanggal: "31 Maret 2026",
+        },
+        {
+          imgSrc: `bahlil-anjg.jpg`,
+          judul: "Kompor harus dimatikan ketika masakan sudah matang.",
+          desc: "Pernyataan pejabat publik di media massa kerap menjadi sorotan warganet belakangan ini. Salah satu di antaranya tidak lain adalah Menteri Energi dan Sumber Daya Mineral (ESDM), Bahlil Lahadalia. Gaya bicaranya yang ceplas-ceplos saat membahas isu krusial sering kali memicu perdebatan.",
+          tanggal: "31 Maret 2026",
+        },
+        {
+          imgSrc: `bahlil-anjg.jpg`,
+          judul: "Kompor harus dimatikan ketika masakan sudah matang.",
+          desc: "Pernyataan pejabat publik di media massa kerap menjadi sorotan warganet belakangan ini. Salah satu di antaranya tidak lain adalah Menteri Energi dan Sumber Daya Mineral (ESDM), Bahlil Lahadalia. Gaya bicaranya yang ceplas-ceplos saat membahas isu krusial sering kali memicu perdebatan.",
+          tanggal: "31 Maret 2026",
+        },
+      ];
+      const doc = await fetchHtml("Landing/berita-card");
+      if (!doc) return;
+      const beritaCard = doc.querySelector("template");
+      berita.forEach((item) => {
+        const card = beritaCard.content.cloneNode(true);
+        const cardImg = card.querySelector("[data-bind=img]");
+        cardImg.src = `/assets/img/${item.imgSrc}`;
+        card.querySelector("[data-bind=judul]").textContent = item.judul;
+        card.querySelector("[data-bind=desc]").textContent = item.desc;
+        card.querySelector("[data-bind=tanggal]").textContent = item.tanggal;
+        beritaWrapper.appendChild(card);
+      });
+    },
+  );
+  callComponent(
+    "Landing/reasons",
+    document.getElementById("reasons"),
+    async (el) => {
+      const reasons1Wrapper = el.querySelector("#reasons1-wrapper");
+      const reasons2Wrapper = el.querySelector("#reasons2-wrapper");
+      const reasons3Wrapper = el.querySelector("#reasons3-wrapper");
+      const doc = await fetchHtml("Landing/reason-card");
+      if (!doc) return;
+      const reasonCard = doc.querySelector("template");
+      reasons1.forEach((item) => renderCard(item, reasons1Wrapper, reasonCard));
+      reasons2.forEach((item) => renderCard(item, reasons2Wrapper, reasonCard));
+      reasons3.forEach((item) => renderCard(item, reasons3Wrapper, reasonCard));
+    },
+  );
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  main();
+  requestAnimationFrame(() => {
+    main();
+  });
 });

@@ -27,9 +27,5 @@ const partnership = [
     imgSrc: "ibm.png",
     title: "IBM",
   },
-  {
-    imgSrc: "visual_studio_code.png",
-    title: "VSCode",
-  },
 ];
 export default partnership;

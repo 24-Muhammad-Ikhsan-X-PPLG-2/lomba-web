@@ -12,7 +12,7 @@ export async function callComponent(nameComponent, div, callback) {
   const template = doc.querySelector("template");
   if (template) {
     if (!div) {
-      throw new Error(`Div ga ada`);
+      throw new Error(`Component ${nameComponent}, ga ada div buat dimasukin`);
     }
     const clone = template.content.cloneNode(true);
     const scripts = doc.querySelectorAll("script");
@@ -32,7 +32,7 @@ export async function callComponent(nameComponent, div, callback) {
 }
 
 /**
- *
+ * fungsi yg berfungsi untuk fetch html dan mengambil documentnya.
  * @param {string} path
  */
 export async function fetchHtml(path) {
