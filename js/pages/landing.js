@@ -284,6 +284,7 @@ export default async function main() {
       reasons3.forEach((item) => renderCard(item, reasons3Wrapper, reasonCard));
     },
   );
+  callComponent("Landing/footer", document.getElementById("footer"));
 }
 
 document.addEventListener("DOMContentLoaded", () => {
