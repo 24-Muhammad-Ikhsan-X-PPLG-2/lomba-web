@@ -65,6 +65,56 @@ export default async function main() {
 
     callComponent("Landing/about", document.getElementById("about")),
     callComponent(
+      "Landing/visi-section",
+      document.getElementById("visi-section"),
+      (el) => {
+        const observerDariKiri = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              console.log("Status target:", entry.isIntersecting); // Cek di console muncul gak?
+
+              if (entry.isIntersecting) {
+                entry.target.classList.remove("-translate-x-full");
+                entry.target.classList.add("translate-x-0");
+                // Berhenti mantau kalau sudah muncul sekali
+                observerDariKiri.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0,
+          },
+        );
+        const visi = el.querySelector("#visi");
+        observerDariKiri.observe(visi);
+      },
+    ),
+    callComponent(
+      "Landing/misi-section",
+      document.getElementById("misi-section"),
+      (el) => {
+        const observerDariKanan = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              console.log("Status target:", entry.isIntersecting); // Cek di console muncul gak?
+
+              if (entry.isIntersecting) {
+                entry.target.classList.remove("translate-x-full");
+                entry.target.classList.add("translate-x-0");
+                // Berhenti mantau kalau sudah muncul sekali
+                observerDariKanan.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0,
+          },
+        );
+        const misi = document.querySelector("#misi");
+        observerDariKanan.observe(misi);
+      },
+    ),
+    callComponent(
       "Landing/partnership",
       document.getElementById("partnership-app"),
       async (el) => {
@@ -297,44 +347,6 @@ export default async function main() {
     ),
     callComponent("Landing/footer", document.getElementById("footer")),
   ]);
-  const observerDariKiri = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        console.log("Status target:", entry.isIntersecting); // Cek di console muncul gak?
-
-        if (entry.isIntersecting) {
-          entry.target.classList.remove("-translate-x-full");
-          entry.target.classList.add("translate-x-0");
-          // Berhenti mantau kalau sudah muncul sekali
-          observerDariKiri.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0,
-    },
-  );
-  const observerDariKanan = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        console.log("Status target:", entry.isIntersecting); // Cek di console muncul gak?
-
-        if (entry.isIntersecting) {
-          entry.target.classList.remove("translate-x-full");
-          entry.target.classList.add("translate-x-0");
-          // Berhenti mantau kalau sudah muncul sekali
-          observerDariKanan.unobserve(entry.target);
-        }
-      });
-    },
-    {
-      threshold: 0,
-    },
-  );
-  const visi = document.querySelector("#visi");
-  const misi = document.querySelector("#misi");
-  observerDariKiri.observe(visi);
-  observerDariKanan.observe(misi);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
