@@ -1,93 +1,82 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-    </head>
-    <body>
-        <template>
-            <div
-                class="lg:w-[400px] md:w-[380px] w-full h-fit bg-white/30 backdrop-blur-xl border border-white/20 group"
-            >
-                <div class="w-full h-[400px] overflow-hidden">
-                    <img
-                        src="/assets/img/bahlil-anjg.jpg"
-                        class="w-full h-full object-cover object-left group-hover:scale-110 transition-transform duration-500"
-                        alt=""
-                        data-bind="img"
-                    />
-                </div>
-                <div class="w-full h-full p-4">
-                    <div class="flex gap-2 items-center mb-2">
-                        <div class="border border-[#091336] rounded-full">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="text-[#091336]"
-                            >
-                                <path
-                                    d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"
-                                />
-                                <circle cx="12" cy="7" r="4" />
-                            </svg>
-                        </div>
-                        <p class="text-lg text-[#091336]">
-                            By SMK Letris Indonesia 2
-                        </p>
-                    </div>
-                    <h2
-                        class="font-serif text-3xl font-semibold mb-2"
-                        data-bind="judul"
-                    >
-                        Kompor harus dimatikan ketika masakan sudah matang.
-                    </h2>
-                    <p
-                        class="max-h-[200px] overflow-y-auto text-gray-700"
-                        data-bind="desc"
-                    >
-                        Pernyataan pejabat publik di media massa kerap menjadi
-                        sorotan warganet belakangan ini. Salah satu di antaranya
-                        tidak lain adalah Menteri Energi dan Sumber Daya Mineral
-                        (ESDM), Bahlil Lahadalia. Gaya bicaranya yang
-                        ceplas-ceplos saat membahas isu krusial sering kali
-                        memicu perdebatan.
-                    </p>
-                    <hr class="mt-4 text-gray-200" />
-                    <div class="w-full flex justify-between mt-4">
-                        <div class="flex gap-2 items-center">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="text-[#091336]"
-                            >
-                                <circle cx="12" cy="12" r="10" />
-                                <path d="M12 6v6l4 2" />
-                            </svg>
-                            <p
-                                class="text-[#091336] text-sm"
-                                data-bind="tanggal"
-                            >
-                                31 Maret 2026
-                            </p>
-                        </div>
-                    </div>
-                </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <template>
+      <div
+        class="w-fit h-fit bg-white/30 backdrop-blur-xl border border-white/20 group"
+      >
+        <div class="w-full h-[400px] overflow-hidden">
+          <img
+            src="/assets/img/bahlil-anjg.jpg"
+            class="w-full h-full object-cover object-left group-hover:scale-110 transition-transform duration-500"
+            alt=""
+            data-bind="img"
+          />
+        </div>
+        <div class="w-full h-full p-4">
+          <div class="flex gap-2 items-center mb-2">
+            <div class="border border-[#091336] rounded-full">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-[#091336]"
+              >
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
             </div>
-        </template>
-    </body>
+            <p class="text-lg text-[#091336]">By SMK Letris Indonesia 2</p>
+          </div>
+          <h2 class="font-serif text-3xl font-semibold mb-2" data-bind="judul">
+            Kompor harus dimatikan ketika masakan sudah matang.
+          </h2>
+          <p
+            class="max-h-[200px] overflow-y-auto text-gray-700"
+            data-bind="desc"
+          >
+            Pernyataan pejabat publik di media massa kerap menjadi sorotan
+            warganet belakangan ini. Salah satu di antaranya tidak lain adalah
+            Menteri Energi dan Sumber Daya Mineral (ESDM), Bahlil Lahadalia.
+            Gaya bicaranya yang ceplas-ceplos saat membahas isu krusial sering
+            kali memicu perdebatan.
+          </p>
+          <hr class="mt-4 text-gray-200" />
+          <div class="w-full flex justify-between mt-4">
+            <div class="flex gap-2 items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-[#091336]"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg>
+              <p class="text-[#091336] text-sm" data-bind="tanggal">
+                31 Maret 2026
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+  </body>
 </html>

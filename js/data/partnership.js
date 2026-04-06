@@ -1,10 +1,10 @@
 const partnership = [
   {
-    imgSrc: "microsoft.png",
+    imgSrc: "microsoft.webp",
     title: "Microsoft",
   },
   {
-    imgSrc: "adobe.png",
+    imgSrc: "adobe.webp",
     title: "Adobe",
   },
   {
@@ -12,19 +12,19 @@ const partnership = [
     title: "Linux",
   },
   {
-    imgSrc: "google.png",
+    imgSrc: "google.webp",
     title: "Google",
   },
   {
-    imgSrc: "mojang.png",
+    imgSrc: "mojang.webp",
     title: "Mojang",
   },
   {
-    imgSrc: "apple.png",
+    imgSrc: "apple.webp",
     title: "Apple",
   },
   {
-    imgSrc: "ibm.png",
+    imgSrc: "ibm.webp",
     title: "IBM",
   },
 ];

@@ -101,3 +101,42 @@ export const misiOsis = [
     desc: "Menjalin relasi dan kerja sama dengan pihak eksternal untuk memperluas wawasan serta memberikan dampak positif bagi sekolah.",
   },
 ];
+
+export const misiSekolah = [
+  {
+    icon: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cpu text-white size-32"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
+    `,
+    desc: "Menyelenggarakan pendidikan vokasi berbasis teknologi terkini untuk menghasilkan lulusan yang kompeten dan relevan dengan pasar kerja.",
+  },
+  {
+    icon: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-check text-white size-32"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
+    `,
+    desc: "Menanamkan nilai-nilai karakter serta etika profesi yang kuat guna membentuk pribadi yang berintegritas, disiplin, dan bertanggung jawab.",
+  },
+  {
+    icon: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-check text-white size-32"><path d="M8 3H2v15h7c1.7 0 3 1.3 3 3V7c0-2.2-1.8-4-4-4Z"/><path d="m16 12 2 2 4-4"/><path d="M22 6V3h-6c-2.2 0-4 1.8-4 4v14c0-1.7 1.3-3 3-3h7v-2.3"/></svg>
+    `,
+    desc: "Mengembangkan kurikulum yang adaptif terhadap perkembangan ilmu pengetahuan, teknologi, dan dinamika industri secara berkelanjutan.",
+  },
+  {
+    icon: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap text-white size-32"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+    `,
+    desc: "Meningkatkan kompetensi tenaga pendidik secara profesional agar mampu menjadi fasilitator pembelajaran yang inspiratif dan inovatif.",
+  },
+  {
+    icon: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake text-white size-32"><path d="m11 17 2 2 4-4"/><path d="m18 10 1-1a2 2 0 0 0-2.83-2.83l-1.25 1.25a2 2 0 0 0 0 2.83l.5.5"/><path d="m12 12-.3-.3a2 2 0 0 0-2.83 0l-1.25 1.25a2.1 2.1 0 0 0 0 2.83l.5.5"/><path d="M18 14h-1.5a4 4 0 0 0-4 4V21"/><path d="M2 21h12"/><path d="M7 21h2"/></svg>
+    `,
+    desc: "Menjalin kemitraan strategis dengan dunia usaha dan dunia industri (DUDI) untuk memperluas akses praktik kerja lapangan.",
+  },
+  {
+    icon: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-school text-white size-32"><path d="M14 22v-4a2 2 0 1 0-4 0v4"/><path d="m18 10 4 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8l4-2"/><path d="M18 5v17"/><path d="M6 5v17"/><circle cx="12" cy="9" r="2"/><path d="M16 2h-8"/></svg>
+    `,
+    desc: "Menciptakan lingkungan sekolah yang kondusif, inklusif, dan berwawasan lingkungan guna mendukung optimalisasi potensi siswa.",
+  },
+];

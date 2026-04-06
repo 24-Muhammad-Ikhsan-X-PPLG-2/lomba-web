@@ -1,8 +1,9 @@
+// SISTEM SCROLL ABAL ABAL AWOKWKW
 let target = 0;
 let current = 0;
 const ease = 0.075;
 
-const slider = document.querySelector("#scroll-container");
+const slider = document.querySelector(".scroll-container");
 
 function lerp(start, end, t) {
   return start * (1 - t) + end * t;
@@ -11,7 +12,7 @@ function lerp(start, end, t) {
 function update() {
   // Update posisi current secara halus
   current = lerp(current, target, ease);
-  //   pake transform biar kena akselerasi GPU
+  //   pake transform biar kena akselerasi GPU (kayanya)
   slider.style.transform = `translate3d(0, ${-current}px, 0)`;
   requestAnimationFrame(update);
 }
@@ -19,9 +20,9 @@ function update() {
 window.addEventListener(
   "wheel",
   (e) => {
-    // update target berdasarkan seberapa jauh user scroll
+    // update target berdasarkan seberapa jauh usernya nge scroll
     target += e.deltaY;
-    // Batasi target biar ga scroll keluar batas dokumen
+    // Batasi target biar ga scroll keluar batas page
     target = Math.max(
       0,
       Math.min(target, slider.scrollHeight - window.innerHeight),

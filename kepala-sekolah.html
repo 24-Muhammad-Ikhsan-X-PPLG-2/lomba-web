@@ -1,23 +1,52 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Kepala Sekolah</title>
-        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="./css/app.css" />
-    </head>
-    <body>
-        <div id="navbar"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kepala Sekolah</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/app.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <div class="min-h-screen bg-[#FFF2D0] p-22">
+      <div
+        class="w-full bg-[#FFF8F0] flex items-center px-5 shadow-lg rounded-xl h-20"
+      >
+        <h1 class="text-2xl font-medium font-jost">
+          Ahmad Maulana Alamsyah, M.Kom, MOS.
+        </h1>
+      </div>
+      <div class="flex w-full mt-4 gap-4">
         <div
-            class="min-h-screen bg-[url('/assets/img/kepala-sekolah.jpg')] relative bg-cover bg-center"
-        ></div>
-        <script type="module" src="/js/pages/kepala-sekolah.js"></script>
-    </body>
+          class="w-[40%] p-5 shadow-lg rounded-xl h-[250px] flex flex-col justify-center items-center bg-[#FFF8F0]"
+        >
+          <img
+            src="/assets/img/smk-logo.webp"
+            class="w-32"
+            loading="lazy"
+            alt=""
+          />
+          <h1 class="text-xl mt-5 font-medium">Kepala Sekolah</h1>
+          <h1 class="text-xl font-semibold">SMK Letris 2</h1>
+        </div>
+        <div class="w-[25%] h-[250px] shadow-lg">
+          <img
+            src="/assets/img/kepala-sekolah.jpeg"
+            class="size-full object-cover rounded-xl object-center"
+            alt=""
+          />
+        </div>
+        <div class="w-[300px] h-[250px]"></div>
+      </div>
+    </div>
+
+    <script type="module" src="/js/pages/kepala-sekolah.js"></script>
+  </body>
 </html>

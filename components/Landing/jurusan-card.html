@@ -1,32 +1,33 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-    </head>
-    <body>
-        <template>
-            <div
-                class="w-[300px] bg-white/40 border border-white/20 backdrop-blur-xl rounded-xl h-[500px] shadow-lg group flex-shrink-0"
-            >
-                <div class="w-[300px] overflow-hidden rounded-t-xl relative">
-                    <div
-                        class="bg-black/50 w-full h-full absolute z-2 opacity-0 group-hover:opacity-100 transition duration-500"
-                    ></div>
-                    <img
-                        data-bind="img"
-                        class="w-[300px] h-[200px] object-cover object-center rounded-t-xl group-hover:scale-125 group-hover:-rotate-10 transition-transform duration-300"
-                    />
-                </div>
-                <div class="p-4">
-                    <h1
-                        class="text-black font-bold text-xl font-jost group-hover:text-blue-800"
-                        data-bind="judul"
-                    ></h1>
-                    <p class="mt-2 font-normal" data-bind="desc"></p>
-                </div>
-            </div>
-        </template>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <template>
+      <div
+        class="w-[300px] bg-white/40 border border-white/20 backdrop-blur-xl rounded-xl h-[500px] shadow-lg group flex-shrink-0"
+      >
+        <div class="w-[300px] overflow-hidden rounded-t-xl relative">
+          <div
+            class="bg-black/50 w-full h-full absolute z-2 opacity-0 group-hover:opacity-100 transition duration-500"
+          ></div>
+          <img
+            data-bind="img"
+            loading="lazy"
+            class="w-[300px] h-[200px] object-cover object-center rounded-t-xl group-hover:scale-125 group-hover:-rotate-10 transition-transform duration-300"
+          />
+        </div>
+        <div class="p-4">
+          <h1
+            class="text-black font-bold text-xl font-jost group-hover:text-blue-800"
+            data-bind="judul"
+          ></h1>
+          <p class="mt-2 font-normal" data-bind="desc"></p>
+        </div>
+      </div>
+    </template>
+  </body>
 </html>

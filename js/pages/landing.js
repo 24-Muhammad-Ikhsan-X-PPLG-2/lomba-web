@@ -1,6 +1,7 @@
 import { jurusan, jurusanDoodle } from "../data/jurusan.js";
+import { misiSekolah } from "../data/misi.js";
 import partnership from "../data/partnership.js";
-import { reasons1, reasons2, reasons3, renderCard } from "../data/reason.js";
+import { reasons1, renderCard } from "../data/reason.js";
 import { callComponent, fetchHtml } from "../lib/component.js";
 import { useState } from "../lib/state.js";
 
@@ -9,6 +10,8 @@ export default async function main() {
     callComponent("Landing/hero", document.getElementById("hero"), (el) => {
       const bg1 = el.querySelector("#bg1");
       const bg2 = el.querySelector("#bg2");
+      const bg3 = el.querySelector("#bg3");
+      const bg4 = el.querySelector("#bg4");
 
       const state = useState(
         {
@@ -17,12 +20,14 @@ export default async function main() {
         () => {
           bg1.dataset.active = state.bgActive == 1;
           bg2.dataset.active = state.bgActive == 2;
+          bg3.dataset.active = state.bgActive == 3;
+          bg4.dataset.active = state.bgActive == 4;
           // console.log(state.bgActive);
         },
       );
 
       setInterval(() => {
-        if (state.bgActive < 2) {
+        if (state.bgActive < 4) {
           state.bgActive = ++state.bgActive;
         } else {
           state.bgActive = 1;
@@ -71,12 +76,9 @@ export default async function main() {
         const observerDariKiri = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
-              console.log("Status target:", entry.isIntersecting); // Cek di console muncul gak?
-
               if (entry.isIntersecting) {
                 entry.target.classList.remove("-translate-x-full");
                 entry.target.classList.add("translate-x-0");
-                // Berhenti mantau kalau sudah muncul sekali
                 observerDariKiri.unobserve(entry.target);
               }
             });
@@ -92,16 +94,13 @@ export default async function main() {
     callComponent(
       "Landing/misi-section",
       document.getElementById("misi-section"),
-      (el) => {
+      async (el) => {
         const observerDariKanan = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
-              console.log("Status target:", entry.isIntersecting); // Cek di console muncul gak?
-
               if (entry.isIntersecting) {
                 entry.target.classList.remove("translate-x-full");
                 entry.target.classList.add("translate-x-0");
-                // Berhenti mantau kalau sudah muncul sekali
                 observerDariKanan.unobserve(entry.target);
               }
             });
@@ -110,6 +109,16 @@ export default async function main() {
             threshold: 0,
           },
         );
+        const misiWrapper = el.querySelector("#wrapper-misi");
+        const doc = await fetchHtml("Landing/misi-card");
+        if (!doc) return;
+        const template = doc.querySelector("template");
+        misiSekolah.forEach((item) => {
+          const card = template.content.cloneNode(true);
+          card.querySelector("[data-bind=icon]").innerHTML = item.icon;
+          card.querySelector("[data-bind=desc]").textContent = item.desc;
+          misiWrapper.appendChild(card);
+        });
         const misi = document.querySelector("#misi");
         observerDariKanan.observe(misi);
       },
@@ -141,15 +150,18 @@ export default async function main() {
         });
       },
     ),
+    callComponent("Landing/wave1", document.getElementById("wave1")),
     callComponent(
       "Landing/menerima-siswa",
       document.getElementById("menerima-siswa-app"),
+      (el) => {},
     ),
     callComponent(
       "Landing/jurusan",
       document.getElementById("jurusan-app"),
       async (el) => {
         const sliderContainer = el.querySelector("#slider-container");
+
         let currentIndex = 0;
         let otomatisSlide = true;
 
@@ -324,24 +336,17 @@ export default async function main() {
         });
       },
     ),
+    callComponent("Landing/wave2", document.getElementById("wave2")),
     callComponent(
       "Landing/reasons",
       document.getElementById("reasons"),
       async (el) => {
         const reasons1Wrapper = el.querySelector("#reasons1-wrapper");
-        const reasons2Wrapper = el.querySelector("#reasons2-wrapper");
-        const reasons3Wrapper = el.querySelector("#reasons3-wrapper");
         const doc = await fetchHtml("Landing/reason-card");
         if (!doc) return;
         const reasonCard = doc.querySelector("template");
         reasons1.forEach((item) =>
           renderCard(item, reasons1Wrapper, reasonCard),
-        );
-        reasons2.forEach((item) =>
-          renderCard(item, reasons2Wrapper, reasonCard),
-        );
-        reasons3.forEach((item) =>
-          renderCard(item, reasons3Wrapper, reasonCard),
         );
       },
     ),
@@ -350,7 +355,5 @@ export default async function main() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  requestAnimationFrame(() => {
-    main();
-  });
+  requestAnimationFrame(main);
 });
