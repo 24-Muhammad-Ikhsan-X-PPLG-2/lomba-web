@@ -1,3 +1,4 @@
+import { fasilitas } from "../data/fasilitas.js";
 import { callComponent, fetchHtml } from "../lib/component.js";
 
 export async function main() {
@@ -12,8 +13,12 @@ export async function main() {
         const doc = await fetchHtml("Fasilitas/fasilitas-card");
         if (!doc) return;
         const template = doc.querySelector("template");
-        Array.from({ length: 10 }).forEach(() => {
+        fasilitas.forEach((item) => {
           const card = template.content.cloneNode(true);
+          card.querySelector("[data-bind=img]").src =
+            `/assets/img/PHOTO_FASILITAS/${item.imgSrc}`;
+          card.querySelector("[data-bind=img]").alt = item.title;
+          card.querySelector("[data-bind=title]").textContent = item.title;
           daftarFasilitas.appendChild(card);
         });
       },

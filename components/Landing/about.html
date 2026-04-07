@@ -7,7 +7,7 @@
   </head>
   <body>
     <template>
-      <div class="h-fit bg-white relative pb-20">
+      <div class="h-fit bg-white relative pb-10">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="rotate-180 -mt-1"
@@ -20,19 +20,21 @@
           ></path>
         </svg>
         <h1
-          class="font-bold lg:text-5xl md:text-4xl text-3xl text-center font-jost"
+          class="font-bold lg:text-5xl md:text-4xl text-3xl text-center font-jost leading-tight"
         >
           Tentang Kami
         </h1>
         <div
-          class="flex lg:flex-row transition-all flex-col justify-center items-center gap-6 mt-8 px-4"
+          class="flex max-w-6xl mx-auto lg:flex-row transition-all flex-col justify-center items-center gap-6 mt-8 px-4"
         >
           <div class="lg:w-[600px] w-full lg:order-1 order-2 relative">
             <div
               class="absolute -top-20 -left-20 bg-blue-800 size-50 rounded-full blur-[100px] animate-pulse"
             ></div>
             <div class="z-2 relative">
-              <h1 class="text-2xl font-bold">SMK Letris Indonesia 2</h1>
+              <h1 class="text-2xl font-extrabold leading-tight">
+                SMK Letris Indonesia 2
+              </h1>
               <div class="flex gap-1 items-center mt-1">
                 <div class="w-8 h-5 bg-blue-800"></div>
                 <div
@@ -66,7 +68,9 @@
               </p>
             </div>
           </div>
-          <div class="lg:order-2 order-1 w-[400px] lg:w-[600px] relative">
+          <div
+            class="lg:order-2 order-1 md:w-[400px] w-full lg:w-[600px] relative"
+          >
             <img
               src="/assets/img/PHOTO_LANDING/about.webp"
               loading="lazy"

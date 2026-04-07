@@ -11,7 +11,9 @@
         <div class="w-full h-[250px]">
           <img
             src="/assets/img/bg3.jpg"
-            class="w-full h-full rounded-xl object-cover"
+            data-bind="img"
+            loading="lazy"
+            class="w-full h-full rounded-xl object-cover object-center"
             alt=""
           />
         </div>
@@ -20,6 +22,7 @@
             class="py-2.5 px-10 cursor-pointer bg-transparent rounded-xl text-xl font-medium font-jost border-3 border-[#091336] text-[#091336] relative group flex items-center transition-all duration-300 hover:bg-gray-300 hover:border-[#efefef]"
           >
             <span
+              data-bind="title"
               class="relative group-hover:right-2 right-0 transition-all duration-300 z-2"
               >Gedung</span
             >

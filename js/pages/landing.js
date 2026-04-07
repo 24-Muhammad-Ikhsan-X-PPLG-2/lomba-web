@@ -70,6 +70,10 @@ export default async function main() {
 
     callComponent("Landing/about", document.getElementById("about")),
     callComponent(
+      "Landing/sambutan-kepsek",
+      document.getElementById("sambutan-kepsek"),
+    ),
+    callComponent(
       "Landing/visi-section",
       document.getElementById("visi-section"),
       (el) => {
@@ -304,22 +308,26 @@ export default async function main() {
         const beritaWrapper = el.querySelector("#berita-wrapper");
         const berita = [
           {
-            imgSrc: `bahlil-anjg.jpg`,
-            judul: "Kompor harus dimatikan ketika masakan sudah matang.",
-            desc: "Pernyataan pejabat publik di media massa kerap menjadi sorotan warganet belakangan ini. Salah satu di antaranya tidak lain adalah Menteri Energi dan Sumber Daya Mineral (ESDM), Bahlil Lahadalia. Gaya bicaranya yang ceplas-ceplos saat membahas isu krusial sering kali memicu perdebatan.",
-            tanggal: "31 Maret 2026",
+            imgSrc: "spmb2.webp",
+            judul: "Penerimaan Peserta Didik Baru (PPDB) Gelombang 2 Dibuka!",
+            desc: "Kesempatan bergabung dengan SMK Letris Indonesia 2 masih terbuka lebar. Dapatkan fasilitas beasiswa prestasi dan potongan biaya gedung bagi pendaftar di Gelombang 2. Kuota terbatas untuk jurusan PPLG!",
+            tanggal: "07 April 2026",
+            kategori: "Pendaftaran",
           },
           {
-            imgSrc: `bahlil-anjg.jpg`,
-            judul: "Kompor harus dimatikan ketika masakan sudah matang.",
-            desc: "Pernyataan pejabat publik di media massa kerap menjadi sorotan warganet belakangan ini. Salah satu di antaranya tidak lain adalah Menteri Energi dan Sumber Daya Mineral (ESDM), Bahlil Lahadalia. Gaya bicaranya yang ceplas-ceplos saat membahas isu krusial sering kali memicu perdebatan.",
-            tanggal: "31 Maret 2026",
+            imgSrc: "juara_bola.webp",
+            judul: "Tim Sepak Bola Letris Raih Juara 3 Turnamen Pelajar Kota",
+            desc: "Semangat pantang menyerah ditunjukkan oleh tim sepak bola SMK Letris Indonesia 2. Setelah melalui laga sengit, tim berhasil mengamankan posisi ketiga dalam ajang Turnamen Pelajar tahun ini. Prestasi ini menjadi bukti nyata kekuatan mental dan kerjasama tim.",
+            tanggal: "02 April 2026",
+            kategori: "Prestasi",
           },
           {
-            imgSrc: `bahlil-anjg.jpg`,
-            judul: "Kompor harus dimatikan ketika masakan sudah matang.",
-            desc: "Pernyataan pejabat publik di media massa kerap menjadi sorotan warganet belakangan ini. Salah satu di antaranya tidak lain adalah Menteri Energi dan Sumber Daya Mineral (ESDM), Bahlil Lahadalia. Gaya bicaranya yang ceplas-ceplos saat membahas isu krusial sering kali memicu perdebatan.",
-            tanggal: "31 Maret 2026",
+            imgSrc: "telkom.jpg",
+            judul:
+              "University Visit: Eksplorasi Teknologi Digital di Telkom University",
+            desc: "Siswa kelas XII jurusan PPLG melakukan kunjungan edukasi ke Telkom University Bandung. Kegiatan ini bertujuan mengenali ekosistem perkuliahan IT dan melihat langsung inovasi di berbagai laboratorium riset digital.",
+            tanggal: "28 Maret 2026",
+            kategori: "Kegiatan",
           },
         ];
         const doc = await fetchHtml("Landing/berita-card");

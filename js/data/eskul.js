@@ -9,11 +9,11 @@ export const ekskuls = [
   },
   {
     bgImg: "sepak-bola/bg.webp",
-    judul: "SEPAK BOLA",
-    img: "sepak-bola/sepak-bola.webp",
-    subJudul: "Ekskul Sepak Bola",
+    judul: "MINI SOCCER",
+    img: "sepak-bola/mini-soccer2.webp",
+    subJudul: "Ekskul Mini Soccer",
     heightText: "40%",
-    desc: "Ekstrakurikuler sepak bola adalah kegiatan tambahan di sekolah yang bertujuan menyalurkan minat, bakat, dan meningkatkan kebugaran fisik siswa, sekaligus mengajarkan teknik dasar seperti passing, dribbling, dan shooting.",
+    desc: "Ekskul mini soccer adalah kegiatan olahraga populer di sekolah (SD-SMA) yang menggunakan lapangan rumput sintetis lebih kecil.",
   },
   {
     bgImg: "volly/bg.webp",

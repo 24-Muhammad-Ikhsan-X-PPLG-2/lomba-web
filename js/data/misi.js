@@ -105,38 +105,44 @@ export const misiOsis = [
 export const misiSekolah = [
   {
     icon: `
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check text-white size-32"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+    `,
+    title: "Pendidikan Karakter",
+    desc: "Menanamkan nilai-nilai religius dan etika untuk membentuk pribadi yang berakhlak mulia dan disiplin.",
+  },
+  {
+    icon: `
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cpu text-white size-32"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
     `,
-    desc: "Menyelenggarakan pendidikan vokasi berbasis teknologi terkini untuk menghasilkan lulusan yang kompeten dan relevan dengan pasar kerja.",
+    title: "Kualitas Akademik & Vokasi",
+    desc: "Menyelenggarakan proses pembelajaran yang inovatif sesuai dengan kebutuhan Dunia Usaha dan Dunia Industri (DUDI).",
   },
   {
     icon: `
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-check text-white size-32"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up text-white size-32"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
     `,
-    desc: "Menanamkan nilai-nilai karakter serta etika profesi yang kuat guna membentuk pribadi yang berintegritas, disiplin, dan bertanggung jawab.",
+    title: "Pengembangan Kompetensi",
+    desc: "Meningkatkan keterampilan siswa melalui praktik kerja lapangan dan sertifikasi keahlian agar siap bersaing di pasar kerja nasional maupun internasional.",
   },
   {
     icon: `
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-check text-white size-32"><path d="M8 3H2v15h7c1.7 0 3 1.3 3 3V7c0-2.2-1.8-4-4-4Z"/><path d="m16 12 2 2 4-4"/><path d="M22 6V3h-6c-2.2 0-4 1.8-4 4v14c0-1.7 1.3-3 3-3h7v-2.3"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rocket-icon lucide-rocket text-white size-32"><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09"/><path d="M9 12a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.4 22.4 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 .05 5 .05"/></svg>
     `,
-    desc: "Mengembangkan kurikulum yang adaptif terhadap perkembangan ilmu pengetahuan, teknologi, dan dinamika industri secara berkelanjutan.",
+    title: "Kemandirian & Kewirausahaan",
+    desc: "Menumbuhkan jiwa entrepreneurship (kewirausahaan) agar lulusan mampu menciptakan lapangan kerja sendiri.",
   },
   {
     icon: `
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap text-white size-32"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings-2 text-white size-32"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>
     `,
-    desc: "Meningkatkan kompetensi tenaga pendidik secara profesional agar mampu menjadi fasilitator pembelajaran yang inspiratif dan inovatif.",
+    title: "Sarana & Prasarana",
+    desc: "Melengkapi fasilitas pendidikan dengan teknologi terkini guna mendukung efektivitas belajar mengajar.",
   },
   {
     icon: `
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake text-white size-32"><path d="m11 17 2 2 4-4"/><path d="m18 10 1-1a2 2 0 0 0-2.83-2.83l-1.25 1.25a2 2 0 0 0 0 2.83l.5.5"/><path d="m12 12-.3-.3a2 2 0 0 0-2.83 0l-1.25 1.25a2.1 2.1 0 0 0 0 2.83l.5.5"/><path d="M18 14h-1.5a4 4 0 0 0-4 4V21"/><path d="M2 21h12"/><path d="M7 21h2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake-icon lucide-handshake text-white size-32"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></svg>
     `,
-    desc: "Menjalin kemitraan strategis dengan dunia usaha dan dunia industri (DUDI) untuk memperluas akses praktik kerja lapangan.",
-  },
-  {
-    icon: `
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-school text-white size-32"><path d="M14 22v-4a2 2 0 1 0-4 0v4"/><path d="m18 10 4 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8l4-2"/><path d="M18 5v17"/><path d="M6 5v17"/><circle cx="12" cy="9" r="2"/><path d="M16 2h-8"/></svg>
-    `,
-    desc: "Menciptakan lingkungan sekolah yang kondusif, inklusif, dan berwawasan lingkungan guna mendukung optimalisasi potensi siswa.",
+    title: "Kerjasama Strategis",
+    desc: "Menjalin kemitraan yang luas dengan berbagai instansi dan industri untuk penyerapan lulusan.",
   },
 ];

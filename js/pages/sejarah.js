@@ -10,46 +10,34 @@ export async function main() {
   // const tahun = ["2010", "2014", "2016", "2018", "2022", "2024", "2026"];
   const tahun = [
     {
-      tahun: "2010",
-      img1: "sejarah2010-1.webp",
-      img2: "sejarah2010-2.webp",
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque placeat molestias numquam libero minima assumenda officiis cupiditate consequatur eaque cum accusamus, dicta magni minus earum dolor sunt doloribus eligendi dolore!",
+      tahun: "2013",
+      img1: "sejarah2013-1.webp",
+      img2: "sejarah2013-2.webp",
+      desc: "Pada 3 Juni 2013, SMK Letris Indonesia 2 resmi didirikan di Pamulang. Pendirian ini bertujuan untuk memperluas jangkauan pendidikan dari unit pertama (SMK Letris Indonesia 1). Pada awal berdiri, sekolah fokus pada pengembangan infrastruktur dan penyusunan kurikulum yang berbasis teknologi dan manajemen.",
     },
     {
       tahun: "2014",
-      img1: "sejarah2010-1.webp",
-      img2: "sejarah2010-2.webp",
-      desc: "Lorem ipsum doloras, sit amet consectetur adipisicing elit. Doloremque placeat molestias numquam libero minima assumenda officiis cupiditate consequatur eaque cum accusamus, dicta magni minus earum dolor sunt doloribus eligendi dolore!",
+      img1: "sejarah2014-1.webp",
+      img2: "sejarah2014-2.webp",
+      desc: "Melihat tingginya permintaan tenaga medis, pada 15 Desember 2014, didirikan unit SMK Kesehatan Letris Indonesia 2. Unit ini memiliki manajemen yang terintegrasi namun fokus pada kompetensi keahlian seperti Farmasi Klinis dan Komunitas serta Keperawatan.",
     },
     {
-      tahun: "2016",
-      img1: "sejarah2010-1.webp",
-      img2: "sejarah2010-2.webp",
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque placeat molestias numquam libero minima assumenda officiis cupiditate consequatur eaque cum accusamus, dicta magni minus earum dolor sunt doloribus eligendi dolore!",
-    },
-    {
-      tahun: "2018",
-      img1: "sejarah2010-1.webp",
-      img2: "sejarah2010-2.webp",
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque placeat molestias numquam libero minima assumenda officiis cupiditate consequatur eaque cum accusamus, dicta magni minus earum dolor sunt doloribus eligendi dolore!",
+      tahun: "2015",
+      img1: "sejarah2015-1.webp",
+      img2: "sejarah2015-2.webp",
+      desc: "Tahun ini menjadi tonggak awal sekolah dalam memperkuat infrastruktur teknologi informasi. Sekolah mulai secara masif membangun laboratorium komputer berspesifikasi tinggi untuk mendukung jurusan teknologi, yang menjadi cikal bakal kuatnya kompetensi di bidang pengembangan perangkat lunak di tahun-tahun berikutnya.",
     },
     {
       tahun: "2022",
-      img1: "sejarah2010-1.webp",
-      img2: "sejarah2010-2.webp",
-      desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque placeat molestias numquam libero minima assumenda officiis cupiditate consequatur eaque cum accusamus, dicta magni minus earum dolor sunt doloribus eligendi dolore!",
+      img1: "sejarah2022-1.webp",
+      img2: "sejarah2022-2.webp",
+      desc: "Pada tahun 2022, SMK Letris Indonesia 2 mulai melakukan transisi besar dalam metode pembelajaran dengan mengadopsi elemen-elemen Kurikulum Merdeka. Sekolah memfokuskan kembali pada pengembangan soft skills siswa dan kolaborasi proyek (Project Based Learning), serta memperbarui sarana praktik untuk memastikan relevansi dengan dunia industri terkini.",
     },
     {
-      tahun: "2024",
-      img1: "sejarah2010-1.webp",
-      img2: "sejarah2010-2.webp",
-      desc: "Lorem ipsum dol1or, sit amet consectetur adipisicing elit. Doloremque placeat molestias numquam libero minima assumenda officiis cupiditate consequatur eaque cum accusamus, dicta magni minus earum dolor sunt doloribus eligendi dolore!",
-    },
-    {
-      tahun: "2026",
-      img1: "sejarah2010-1.webp",
-      img2: "sejarah2010-2.webp",
-      desc: "Lorem ipsum dolor12, sit amet consectetur adipisicing elit. Doloremque placeat molestias numquam libero minima assumenda officiis cupiditate consequatur eaque cum accusamus, dicta magni minus earum dolor sunt doloribus eligendi dolore!",
+      tahun: "2023",
+      img1: "sejarah2023-1.webp",
+      img2: "sejarah2023-2.webp",
+      desc: "Tahun 2023 menjadi tahun yang signifikan bagi sekolah dikarenakan berdasarkan SK nomor 105/BAN-PDM/SK/2023, sekolah resmi menyandang status Terakreditasi A (Unggul), yang menunjukkan kualitas pengajaran dan fasilitas telah memenuhi standar nasional yang tinggi, dan pada 27 Juni 2023, sekolah memperbarui Izin Operasional melalui PTSP dengan nomor 570/20/PIOSmk/DPMPTSP/VI/2023.",
     },
   ];
   const contentWrapper = document.getElementById("content");
@@ -57,6 +45,12 @@ export async function main() {
   if (!docRes) return;
   const template = docRes.querySelector("template");
   const content = template.content.cloneNode(true);
+  content.querySelector("[data-bind=tahun]").textContent = tahun[0].tahun;
+  content.querySelector("[data-bind=img1]").src =
+    `/assets/img/sejarah/${tahun[0].img1}`;
+  content.querySelector("[data-bind=img2]").src =
+    `/assets/img/sejarah/${tahun[0].img2}`;
+  content.querySelector("[data-bind=desc]").textContent = tahun[0].desc;
   contentWrapper.appendChild(content);
   const prev = document.getElementById("prev");
   const next = document.getElementById("next");
@@ -74,6 +68,7 @@ export async function main() {
           tahun[value].tahun;
         content.querySelector("[data-bind=img1]").src =
           `/assets/img/sejarah/${tahun[value].img1}`;
+        console.log(content.querySelector("[data-bind=img1]"));
         content.querySelector("[data-bind=img2]").src =
           `/assets/img/sejarah/${tahun[value].img2}`;
         content.querySelector("[data-bind=desc]").textContent =

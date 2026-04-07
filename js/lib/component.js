@@ -19,6 +19,9 @@ export async function callComponent(nameComponent, div, callback) {
     scripts.forEach((el) => {
       if (el.textContent.includes("<!CDATA[")) return;
       const myNewScript = document.createElement("script");
+      if (el.getAttribute("src")) {
+        myNewScript.setAttribute("src", el.getAttribute("src"));
+      }
       myNewScript.textContent = el.textContent;
       document.body.appendChild(myNewScript);
       el.remove();

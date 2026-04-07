@@ -16,8 +16,8 @@ const partnership = [
     title: "Google",
   },
   {
-    imgSrc: "mojang.webp",
-    title: "Mojang",
+    imgSrc: "bumida.webp",
+    title: "Bumida",
   },
   {
     imgSrc: "apple.webp",
