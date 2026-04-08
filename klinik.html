@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KLINIK</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/app.css" />
+  </head>
+  <body>
+    <div
+      class="min-h-screen relative flex justify-center items-center bg-gradient-to-br from-black to-gray-800"
+    >
+      <div class="absolute -bottom-50 z-1 right-0">
+        <div class="size-[400px] bg-blue-950 animate-pulse blur-[100px]"></div>
+      </div>
+      <div class="absolute -bottom-50 z-1 left-0">
+        <div class="size-[400px] bg-blue-950 animate-pulse blur-[100px]"></div>
+      </div>
+      <div
+        class="absolute left-5 top-5 cursor-pointer hover:left-8 transition-all duration-500 text-white gap-2"
+      >
+        <a href="/index.html" class="flex items-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-move-left-icon lucide-move-left"
+          >
+            <path d="M6 8L2 12L6 16" />
+            <path d="M2 12H22" />
+          </svg>
+          <span class="font-extrabold leading-tight">Kembali ke letris</span>
+        </a>
+      </div>
+      <img src="/assets/img/klinik/klinik_logo.webp" class="w-80" alt="" />
+    </div>
+    <div class="min-h-screen bg-gradient-to-bl pb-10 from-gray-800 to-black">
+      <img
+        src="/assets/img/klinik/klinik_bg.webp"
+        class="lg:w-[80%] w-[90%] relative z-10 rounded-3xl shadow-2xl mx-auto"
+        alt=""
+      />
+    </div>
+    <section class="py-24 bg-black relative overflow-hidden">
+      <div class="max-w-6xl mx-auto px-6 relative z-10">
+        <h2
+          class="text-6xl md:text-8xl font-black text-transparent stroke-white stroke-2 uppercase italic mb-12 tracking-tighter opacity-20 absolute -top-10 left-0"
+        >
+          THE LINEUP
+        </h2>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="personel"></div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-gray-900 px-6 border-y border-white/5">
+      <div class="max-w-4xl mx-auto">
+        <div
+          class="flex items-center justify-between mb-10 border-b-2 border-blue-950 pb-4"
+        >
+          <h3
+            class="text-3xl font-black text-white uppercase italic tracking-tighter"
+          >
+            List Chaos
+          </h3>
+          <span class="text-blue-500 font-mono text-sm tracking-widest"
+            >LATEST SHOWS</span
+          >
+        </div>
+
+        <div class="space-y-4">
+          <div
+            class="flex flex-col md:flex-row justify-between items-start md:items-center p-6 bg-white/5 hover:bg-blue-950/30 transition-colors border-l-4 border-transparent hover:border-blue-500 group duration-300"
+          >
+            <div>
+              <p class="text-blue-500 font-mono text-sm">DEC 9, 2025</p>
+              <h4
+                class="text-white text-2xl font-bold uppercase group-hover:italic transition-all"
+              >
+                Letris Got Talent
+              </h4>
+            </div>
+            <div class="mt-4 md:mt-0">
+              <p
+                class="text-gray-400 font-bold uppercase tracking-widest text-sm"
+              >
+                Letris Hall Center
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex flex-col md:flex-row justify-between items-start md:items-center p-6 bg-white/5 hover:bg-blue-950/30 transition-colors border-l-4 border-transparent hover:border-blue-500 group duration-300"
+          >
+            <div>
+              <p class="text-blue-500 font-mono text-sm">DEC 11, 2025</p>
+              <h4
+                class="text-white text-2xl font-bold uppercase group-hover:italic transition-all"
+              >
+                Letris Pentas Seni
+              </h4>
+            </div>
+            <div class="mt-4 md:mt-0">
+              <p
+                class="text-gray-400 font-bold uppercase tracking-widest text-sm"
+              >
+                Letris Hall Center
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="module" src="/js/pages/klinik.js"></script>
+  </body>
+</html>

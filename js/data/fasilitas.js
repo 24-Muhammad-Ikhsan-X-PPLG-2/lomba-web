@@ -3,10 +3,7 @@ export const fasilitas = [
     imgSrc: "gedung.webp",
     title: "Gedung",
   },
-  {
-    imgSrc: "gerbang.webp",
-    title: "Gerbang Sekolah",
-  },
+
   {
     imgSrc: "lab-kom.webp",
     title: "Lab Komputer",

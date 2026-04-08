@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guru SMK Letris Indonesia 2</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/app.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <div class="min-h-screen bg-white">
+      <section class="bg-[#091336] pt-22 py-20 px-6 relative overflow-hidden">
+        <div
+          class="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 blur-3xl rounded-full uppercase tracking-tighter text-white/5 font-black text-9xl"
+        >
+          CURR
+        </div>
+        <div class="max-w-6xl mx-auto relative z-10 text-center">
+          <h1 class="text-4xl md:text-6xl font-black font-jost text-white mb-4">
+            Guru Letris
+          </h1>
+          <p class="text-slate-400 text-lg max-w-2xl mx-auto">
+            Mengenal lebih dekat jajaran tenaga pendidik profesional kami yang
+            berdedikasi tinggi dalam membimbing, menginspirasi, dan mencetak
+            generasi unggul yang siap menghadapi tantangan di masa depan.
+          </p>
+        </div>
+      </section>
+      <div
+        class="mt-8 pb-10 w-fit mx-auto grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-14"
+        id="pictures"
+      ></div>
+    </div>
+    <div id="footer"></div>
+    <script type="module" src="/js/pages/guru.js"></script>
+  </body>
+</html>

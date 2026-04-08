@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <template>
+      <div
+        class="group relative overflow-hidden border border-white/10 grayscale hover:grayscale-0 transition-all duration-500"
+      >
+        <img
+          src="path-to-vocalist.jpg"
+          alt="Vocal"
+          data-bind="img"
+          class="w-full h-80 object-cover scale-110 group-hover:scale-100 transition-transform"
+        />
+        <div
+          class="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black to-transparent w-full"
+        >
+          <p
+            data-bind="nama"
+            class="text-white font-black uppercase text-xl italic tracking-tighter"
+          >
+            Ikhsan
+          </p>
+          <p
+            data-bind="role"
+            class="text-blue-500 text-xs font-bold tracking-widest uppercase"
+          >
+            Vocals
+          </p>
+        </div>
+      </div>
+    </template>
+  </body>
+</html>

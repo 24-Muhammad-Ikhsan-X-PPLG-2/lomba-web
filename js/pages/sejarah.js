@@ -54,6 +54,8 @@ export async function main() {
   contentWrapper.appendChild(content);
   const prev = document.getElementById("prev");
   const next = document.getElementById("next");
+  const nextMobile = document.getElementById("next-mobile");
+  const prevMobile = document.getElementById("prev-mobile");
   tahunDesktop[0].dataset.active = true;
   let currentIndex = new Proxy(
     {
@@ -68,7 +70,6 @@ export async function main() {
           tahun[value].tahun;
         content.querySelector("[data-bind=img1]").src =
           `/assets/img/sejarah/${tahun[value].img1}`;
-        console.log(content.querySelector("[data-bind=img1]"));
         content.querySelector("[data-bind=img2]").src =
           `/assets/img/sejarah/${tahun[value].img2}`;
         content.querySelector("[data-bind=desc]").textContent =
@@ -82,8 +83,8 @@ export async function main() {
   function prevTahun() {
     if (currentIndex.value === 0) {
       tahunDesktop[0].dataset.active = false;
-      tahunDesktop[6].dataset.active = true;
-      currentIndex.value = 6;
+      tahunDesktop[4].dataset.active = true;
+      currentIndex.value = 4;
     } else {
       tahunDesktop[currentIndex.value].dataset.active = false;
       currentIndex.value -= 1;
@@ -91,8 +92,8 @@ export async function main() {
     }
   }
   function nextTahun() {
-    if (currentIndex.value === 6) {
-      tahunDesktop[6].dataset.active = false;
+    if (currentIndex.value === 4) {
+      tahunDesktop[4].dataset.active = false;
       tahunDesktop[0].dataset.active = true;
       currentIndex.value = 0;
     } else {
@@ -103,6 +104,8 @@ export async function main() {
   }
   prev.addEventListener("click", prevTahun);
   next.addEventListener("click", nextTahun);
+  nextMobile.addEventListener("click", nextTahun);
+  prevMobile.addEventListener("click", prevTahun);
   tahunDesktop.forEach((el, idx) => {
     el.addEventListener("click", () => {
       tahunDesktop[currentIndex.value].dataset.active = false;

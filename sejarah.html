@@ -15,7 +15,55 @@
   </head>
   <body>
     <div id="navbar"></div>
-    <div class="bg-[#201c1b] pb-20 text-white h-fit">
+    <div class="bg-[#201c1b] pb-20 text-white h-fit w-full">
+      <div
+        class="sticky md:block hidden z-10 top-1/2 -translate-y-1/2 left-0"
+        id="prev"
+      >
+        <div
+          class="size-[50px] bg-gray-600/50 flex cursor-pointer justify-center items-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-arrow-left-icon lucide-arrow-left"
+          >
+            <path d="m12 19-7-7 7-7" />
+            <path d="M19 12H5" />
+          </svg>
+        </div>
+      </div>
+      <div
+        class="sticky md:flex hidden z-10 top-1/2 -translate-y-1/2 w-full right-0 justify-end"
+        id="next"
+      >
+        <div
+          class="size-[50px] bg-gray-600/50 flex cursor-pointer justify-center items-center"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-arrow-right-icon lucide-arrow-right"
+          >
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
+        </div>
+      </div>
       <h1
         class="pt-22 font-serif text-center font-bold lg:text-5xl md:text-5xl text-4xl"
       >
@@ -66,6 +114,22 @@
         </div>
       </div>
       <div class="flex lg:hidden items-center gap-2 w-fit mx-auto mt-5">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="text-[#4B2E2B] md:hidden block"
+          id="prev-mobile"
+        >
+          <path d="M6 8L2 12L6 16" />
+          <path d="M2 12H22" />
+        </svg>
         <div class="h-0.5 w-20 bg-[#4B2E2B] rounded-l-xl"></div>
         <p
           class="text-white cursor-pointer font-semibold text-xl drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]"
@@ -74,57 +138,24 @@
           2013
         </p>
         <div class="h-0.5 w-20 bg-[#4B2E2B] rounded-t-xl"></div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="text-[#4B2E2B] md:hidden block"
+          id="next-mobile"
+        >
+          <path d="M18 8L22 12L18 16" />
+          <path d="M2 12H22" />
+        </svg>
       </div>
       <div class="w-full relative">
-        <div
-          class="absolute md:block hidden z-10 top-1/2 -translate-y-1/2 left-0"
-          id="prev"
-        >
-          <div
-            class="size-[50px] bg-gray-600/50 flex cursor-pointer justify-center items-center"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-arrow-left-icon lucide-arrow-left"
-            >
-              <path d="m12 19-7-7 7-7" />
-              <path d="M19 12H5" />
-            </svg>
-          </div>
-        </div>
-        <div
-          class="absolute md:block hidden z-10 top-1/2 -translate-y-1/2 right-0"
-          id="next"
-        >
-          <div
-            class="size-[50px] bg-gray-600/50 flex cursor-pointer justify-center items-center"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-arrow-right-icon lucide-arrow-right"
-            >
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          </div>
-        </div>
-
         <div
           id="content"
           class="w-full min-h-[492px] transition-all duration-500"

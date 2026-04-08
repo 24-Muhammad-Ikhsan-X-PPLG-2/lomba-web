@@ -8,24 +8,32 @@ const partnership = [
     title: "Adobe",
   },
   {
-    imgSrc: "linux.webp",
-    title: "Linux",
+    imgSrc: "mikrotik.svg",
+    title: "Mikrotik",
   },
   {
-    imgSrc: "google.webp",
-    title: "Google",
+    imgSrc: "pln.webp",
+    title: "PLN",
   },
   {
     imgSrc: "bumida.webp",
     title: "Bumida",
   },
   {
-    imgSrc: "apple.webp",
-    title: "Apple",
+    imgSrc: "sppg.webp",
+    title: "SPPG",
   },
   {
-    imgSrc: "ibm.webp",
-    title: "IBM",
+    imgSrc: "bumn.webp",
+    title: "BUMN",
+  },
+  {
+    imgSrc: "erlangga.webp",
+    title: "Erlangga",
+  },
+  {
+    imgSrc: "mayora.webp",
+    title: "Mayora",
   },
 ];
 export default partnership;
