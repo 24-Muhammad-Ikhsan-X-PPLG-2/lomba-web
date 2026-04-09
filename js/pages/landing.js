@@ -5,6 +5,7 @@ import { reasons1, renderCard } from "../data/reason.js";
 import { callComponent, fetchHtml } from "../lib/component.js";
 import { useState } from "../lib/state.js";
 
+// script ini paling panjang karena banyak komponen yg memerlukan javascript untuk interaktivitas.
 export default async function main() {
   await Promise.all([
     callComponent("Landing/hero", document.getElementById("hero"), (el) => {
@@ -170,6 +171,7 @@ export default async function main() {
         let otomatisSlide = true;
 
         function renderCards() {
+          // kenapa ga pake fetchHtml? mungkin terlihat simple akan tetapi fetchHtml membutuhkan waktu sepersekian miliseconds untuk merender ke layar browser, sedangkan cara ini adalah cara yg paling efisien untuk merender card.
           sliderContainer.innerHTML = "";
           jurusan.forEach((item) => {
             const card = document.createElement("div");
@@ -191,6 +193,7 @@ export default async function main() {
         function updateSlider() {
           requestAnimationFrame(() => {
             const cards = el.querySelectorAll(".card-transition");
+            // Dekorasi gambar
             const gambarDoodles = el.querySelectorAll(".jurusan-doodle");
             gambarDoodles.forEach((gambar, idx) => {
               if (currentIndex === 0) {
@@ -206,6 +209,21 @@ export default async function main() {
                 gambar.classList.add("scale-0");
 
                 gambar.src = `/assets/img/${jurusanDoodle.dkv[idx]}`;
+                gambar.classList.remove("scale-0");
+              } else if (currentIndex === 3) {
+                gambar.classList.add("scale-0");
+
+                gambar.src = `/assets/img/${jurusanDoodle.akl[idx]}`;
+                gambar.classList.remove("scale-0");
+              } else if (currentIndex === 4) {
+                gambar.classList.add("scale-0");
+
+                gambar.src = `/assets/img/${jurusanDoodle.mplb[idx]}`;
+                gambar.classList.remove("scale-0");
+              } else if (currentIndex === 5) {
+                gambar.classList.add("scale-0");
+
+                gambar.src = `/assets/img/${jurusanDoodle.pm[idx]}`;
                 gambar.classList.remove("scale-0");
               } else {
                 gambar.src = "";

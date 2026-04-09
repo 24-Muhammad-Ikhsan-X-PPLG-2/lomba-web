@@ -15,105 +15,111 @@
   </head>
   <body>
     <div id="navbar"></div>
-    <div class="bg-[#201c1b] pb-20 text-white h-fit w-full">
+    <div class="pb-20 text-white h-fit w-full relative">
+      <div class="bg-black/50 w-full h-full z-1 absolute"></div>
       <div
-        class="sticky md:block hidden z-10 top-1/2 -translate-y-1/2 left-0"
-        id="prev"
+        class="bg-cover bg-center grayscale w-full h-full absolute"
+        data-bind="img-bg"
+      ></div>
+      <div
+        class="sticky top-1/2 -translate-y-1/2 left-0 w-full justify-between items-center md:flex hidden z-13"
       >
-        <div
-          class="size-[50px] bg-gray-600/50 flex cursor-pointer justify-center items-center"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-arrow-left-icon lucide-arrow-left"
+        <div class="w-fit" id="prev">
+          <div
+            class="size-[50px] bg-gray-600/50 flex cursor-pointer justify-center items-center"
           >
-            <path d="m12 19-7-7 7-7" />
-            <path d="M19 12H5" />
-          </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-arrow-left-icon lucide-arrow-left"
+            >
+              <path d="m12 19-7-7 7-7" />
+              <path d="M19 12H5" />
+            </svg>
+          </div>
         </div>
-      </div>
-      <div
-        class="sticky md:flex hidden z-10 top-1/2 -translate-y-1/2 w-full right-0 justify-end"
-        id="next"
-      >
-        <div
-          class="size-[50px] bg-gray-600/50 flex cursor-pointer justify-center items-center"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-arrow-right-icon lucide-arrow-right"
+        <div class="w-fit" id="next">
+          <div
+            class="size-[50px] bg-gray-600/50 flex cursor-pointer justify-center items-center"
           >
-            <path d="M5 12h14" />
-            <path d="m12 5 7 7-7 7" />
-          </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-arrow-right-icon lucide-arrow-right"
+            >
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </div>
         </div>
       </div>
       <h1
-        class="pt-22 font-serif text-center font-bold lg:text-5xl md:text-5xl text-4xl"
+        class="pt-22 font-serif relative z-2 text-center font-bold lg:text-5xl md:text-5xl text-4xl"
       >
         Sejarah SMK Letris 2
       </h1>
       <div
-        class="lg:flex hidden gap-3 items-center w-full px-14 mt-10 justify-center"
+        class="lg:flex hidden relative z-12 gap-3 items-center w-full px-14 mt-10 justify-center"
       >
         <div class="flex items-center gap-2">
-          <div class="h-0.5 w-20 bg-[#4B2E2B] rounded-l-xl"></div>
+          <div class="h-0.5 w-20 bg-blue-800 rounded-l-xl"></div>
           <p
-            class="text-[#8C5A3C] data-[active=true]:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)] data-[active=true]:text-white hover:text-white transition duration-200 cursor-pointer font-semibold text-xl tahun"
+            class="text-gray-400 data-[active=true]:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)] data-[active=true]:text-white hover:text-white transition duration-200 cursor-pointer font-semibold text-xl tahun"
           >
             2013
           </p>
         </div>
         <div class="flex items-center gap-2">
-          <div class="h-0.5 w-20 bg-[#4B2E2B]"></div>
+          <div class="h-0.5 w-20 bg-blue-800"></div>
           <p
-            class="text-[#8C5A3C] data-[active=true]:text-white hover:text-white transition duration-200 cursor-pointer text-xl font-semibold tahun data-[active=true]:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]"
+            class="text-gray-400 data-[active=true]:text-white hover:text-white transition duration-200 cursor-pointer text-xl font-semibold tahun data-[active=true]:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]"
           >
             2014
           </p>
         </div>
         <div class="flex items-center gap-2">
-          <div class="h-0.5 w-20 bg-[#4B2E2B]"></div>
+          <div class="h-0.5 w-20 bg-blue-800"></div>
           <p
-            class="text-[#8C5A3C] data-[active=true]:text-white hover:text-white transition duration-200 cursor-pointer text-xl font-semibold tahun data-[active=true]:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]"
+            class="text-gray-400 data-[active=true]:text-white hover:text-white transition duration-200 cursor-pointer text-xl font-semibold tahun data-[active=true]:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]"
           >
             2015
           </p>
         </div>
         <div class="flex items-center gap-2">
-          <div class="h-0.5 w-20 bg-[#4B2E2B]"></div>
+          <div class="h-0.5 w-20 bg-blue-800"></div>
           <p
-            class="text-[#8C5A3C] data-[active=true]:text-white hover:text-white transition duration-200 cursor-pointer text-xl font-semibold tahun data-[active=true]:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]"
+            class="text-gray-400 data-[active=true]:text-white hover:text-white transition duration-200 cursor-pointer text-xl font-semibold tahun data-[active=true]:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]"
           >
             2022
           </p>
         </div>
         <div class="flex items-center gap-2">
-          <div class="h-0.5 w-20 bg-[#4B2E2B]"></div>
+          <div class="h-0.5 w-20 bg-blue-800"></div>
           <p
-            class="text-[#8C5A3C] data-[active=true]:text-white hover:text-white transition duration-200 cursor-pointer text-xl font-semibold tahun data-[active=true]:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]"
+            class="text-gray-400 data-[active=true]:text-white hover:text-white transition duration-200 cursor-pointer text-xl font-semibold tahun data-[active=true]:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]"
           >
             2023
           </p>
+          <div class="h-0.5 w-20 bg-blue-800 rounded-r-xl"></div>
         </div>
       </div>
-      <div class="flex lg:hidden items-center gap-2 w-fit mx-auto mt-5">
+      <div
+        class="flex lg:hidden items-center relative z-12 gap-2 w-fit mx-auto mt-5"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -124,20 +130,20 @@
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="text-[#4B2E2B] md:hidden block"
+          class="text-blue-800 md:hidden block"
           id="prev-mobile"
         >
           <path d="M6 8L2 12L6 16" />
           <path d="M2 12H22" />
         </svg>
-        <div class="h-0.5 w-20 bg-[#4B2E2B] rounded-l-xl"></div>
+        <div class="h-0.5 w-20 bg-blue-800 rounded-l-xl"></div>
         <p
           class="text-white cursor-pointer font-semibold text-xl drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]"
           id="tahun-mobile"
         >
           2013
         </p>
-        <div class="h-0.5 w-20 bg-[#4B2E2B] rounded-t-xl"></div>
+        <div class="h-0.5 w-20 bg-blue-800 rounded-t-xl"></div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -148,14 +154,14 @@
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="text-[#4B2E2B] md:hidden block"
+          class="text-blue-800 md:hidden block"
           id="next-mobile"
         >
           <path d="M18 8L22 12L18 16" />
           <path d="M2 12H22" />
         </svg>
       </div>
-      <div class="w-full relative">
+      <div class="w-full relative z-12">
         <div
           id="content"
           class="w-full min-h-[492px] transition-all duration-500"

@@ -23,6 +23,30 @@ export const jurusanDoodle = {
     "dkv/graphic-designer.webp",
     "dkv/web-design.webp",
   ],
+  mplb: [
+    "mplb/bank.webp",
+    "mplb/branch.webp",
+    "mplb/business-and-trade.webp",
+    "mplb/meeting-room.webp",
+    "mplb/working-time.webp",
+    "mplb/workplace.webp",
+  ],
+  pm: [
+    "pm/bag.webp",
+    "pm/deal.webp",
+    "pm/form.webp",
+    "pm/notebook.webp",
+    "pm/presentation.webp",
+    "pm/website.webp",
+  ],
+  akl: [
+    "akl/accounting.webp",
+    "akl/calculator.webp",
+    "akl/expense.webp",
+    "akl/passbook.webp",
+    "akl/taxes.webp",
+    "akl/taxes2.webp",
+  ],
 };
 
 export const jurusan = [

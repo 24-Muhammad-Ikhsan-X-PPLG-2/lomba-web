@@ -46,8 +46,9 @@ export async function main() {
   const template = docRes.querySelector("template");
   const content = template.content.cloneNode(true);
   content.querySelector("[data-bind=tahun]").textContent = tahun[0].tahun;
-  content.querySelector("[data-bind=img1]").src =
-    `/assets/img/sejarah/${tahun[0].img1}`;
+  document
+    .querySelector("[data-bind=img-bg]")
+    .classList.add(`bg-[url('/assets/img/sejarah/${tahun[0].img1}')]`);
   content.querySelector("[data-bind=img2]").src =
     `/assets/img/sejarah/${tahun[0].img2}`;
   content.querySelector("[data-bind=desc]").textContent = tahun[0].desc;
@@ -68,8 +69,6 @@ export async function main() {
         const content = template.content.cloneNode(true);
         content.querySelector("[data-bind=tahun]").textContent =
           tahun[value].tahun;
-        content.querySelector("[data-bind=img1]").src =
-          `/assets/img/sejarah/${tahun[value].img1}`;
         content.querySelector("[data-bind=img2]").src =
           `/assets/img/sejarah/${tahun[value].img2}`;
         content.querySelector("[data-bind=desc]").textContent =
@@ -83,22 +82,54 @@ export async function main() {
   function prevTahun() {
     if (currentIndex.value === 0) {
       tahunDesktop[0].dataset.active = false;
+      document
+        .querySelector("[data-bind=img-bg]")
+        .classList.remove(`bg-[url('/assets/img/sejarah/${tahun[0].img1}')]`);
       tahunDesktop[4].dataset.active = true;
+      document
+        .querySelector("[data-bind=img-bg]")
+        .classList.add(`bg-[url('/assets/img/sejarah/${tahun[4].img1}')]`);
       currentIndex.value = 4;
     } else {
       tahunDesktop[currentIndex.value].dataset.active = false;
+      document
+        .querySelector("[data-bind=img-bg]")
+        .classList.remove(
+          `bg-[url('/assets/img/sejarah/${tahun[currentIndex.value].img1}')]`,
+        );
       currentIndex.value -= 1;
+      document
+        .querySelector("[data-bind=img-bg]")
+        .classList.add(
+          `bg-[url('/assets/img/sejarah/${tahun[currentIndex.value].img1}')]`,
+        );
       tahunDesktop[currentIndex.value].dataset.active = true;
     }
   }
   function nextTahun() {
     if (currentIndex.value === 4) {
       tahunDesktop[4].dataset.active = false;
+      document
+        .querySelector("[data-bind=img-bg]")
+        .classList.remove(`bg-[url('/assets/img/sejarah/${tahun[4].img1}')]`);
+      document
+        .querySelector("[data-bind=img-bg]")
+        .classList.add(`bg-[url('/assets/img/sejarah/${tahun[0].img1}')]`);
       tahunDesktop[0].dataset.active = true;
       currentIndex.value = 0;
     } else {
       tahunDesktop[currentIndex.value].dataset.active = false;
+      document
+        .querySelector("[data-bind=img-bg]")
+        .classList.remove(
+          `bg-[url('/assets/img/sejarah/${tahun[currentIndex.value].img1}')]`,
+        );
       currentIndex.value += 1;
+      document
+        .querySelector("[data-bind=img-bg]")
+        .classList.add(
+          `bg-[url('/assets/img/sejarah/${tahun[currentIndex.value].img1}')]`,
+        );
       tahunDesktop[currentIndex.value].dataset.active = true;
     }
   }
@@ -109,7 +140,17 @@ export async function main() {
   tahunDesktop.forEach((el, idx) => {
     el.addEventListener("click", () => {
       tahunDesktop[currentIndex.value].dataset.active = false;
+      document
+        .querySelector("[data-bind=img-bg]")
+        .classList.remove(
+          `bg-[url('/assets/img/sejarah/${tahun[currentIndex.value].img1}')]`,
+        );
       currentIndex.value = idx;
+      document
+        .querySelector("[data-bind=img-bg]")
+        .classList.add(
+          `bg-[url('/assets/img/sejarah/${tahun[currentIndex.value].img1}')]`,
+        );
       tahunDesktop[idx].dataset.active = true;
     });
   });
